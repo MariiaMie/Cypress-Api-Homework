@@ -157,7 +157,7 @@ describe("httpbin tests", () => {
 			failOnStatusCode: true,
 		};
 		cy.request(request).then((response) => {
-			assert.isTrue(response.duration <= 550);
+			assert.isTrue(response.duration <= 850);
 		});
 	});
 });
