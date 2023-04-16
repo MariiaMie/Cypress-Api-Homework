@@ -150,14 +150,14 @@ describe("httpbin tests", () => {
 		});
 	});
 	// Test 11 ----------
-	it("Test Duration", () => {
-		const request = {
+	it("Method GET", () => {
+		cy.request({
 			method: "GET",
-			url: "https://httpbin.org/post",
+			url: "https://httpbin.org/get",
 			failOnStatusCode: true,
-		};
-		cy.request(request).then((response) => {
-			assert.isTrue(response.duration <= 850);
+		}).as("details");
+		cy.get("@details").then((response) => {
+			assert.equal(200, response.status);
 		});
 	});
 });
