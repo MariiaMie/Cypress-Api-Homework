@@ -149,4 +149,15 @@ describe("httpbin tests", () => {
 			assert.equal("77.255.29.157", response.requestHeaders.origin);
 		});
 	});
+	// Test 11 ----------
+	it("Method GET", () => {
+		cy.request({
+			method: "GET",
+			url: "https://httpbin.org/get",
+			failOnStatusCode: true,
+		}).as("details");
+		cy.get("@details").then((response) => {
+			assert.equal(200, response.status);
+		});
+	});
 });
