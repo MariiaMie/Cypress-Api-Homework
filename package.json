@@ -1,4 +1,7 @@
 {
+	"scripts": {
+		"build": "cypress"
+	},
 	"devDependencies": {
 		"cypress": "^12.9.0"
 	}
